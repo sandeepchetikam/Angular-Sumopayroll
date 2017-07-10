@@ -1,0 +1,151 @@
+<div id="wrapper">
+            <nav class="navbar navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+  <!-- Side menu toggle -->
+  <div id="sidebar-toggle">
+    <span class="fafabars"><i class="fa fa-bars" ></i></span>
+  </div>
+  <!-- Logo -->
+  <a class="navbar-brand internal" href="https://dev.sumopayroll.com"><img width="155px" src="https://dev.sumopayroll.com/img/logo1.png" /></a>
+  <span class="header-title" >
+    Employees
+  </span>
+  <ul class="nav navbar-nav navbar-right navbar-user">
+    <li>
+      <div id="current-user">
+        <p class="userSpace">Sandeep Chetikam</p>
+        <p class="companySpace"><small class="authusername">mycompany</small></p>
+      </div>
+    </li>
+    <!-- Notifications -->
+    <li class="notifications">
+      <a href="#" class="right-sidebar-toggle" data-toggle="dropdown"><i class="fa fa-bell-o fa-lg notification-bell fa-align"></i><span class="badge hidden" id="notification-count"></span></a>
+    </li>
+        
+    <!-- Company Logo -->
+    <!-- Profile Pic dropdown -->
+<li class="dropdown profile-dropdown">
+      <a href="#" class="dropdown-toggle profile-dropdowntoggle" data-toggle="dropdown">
+        <img class="currentUserPic" src="https://sumopayrollapp.s3.ap-south-1.amazonaws.com/Dev/CompanyFiles/111/users/126/16864610_1764227623891695_574012563799452087_n.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI57OFN3HPCBPQZIQ%2F20170630%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20170630T124426Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=3600&amp;X-Amz-Signature=636611392fc0f06e95f1e9998b2ec6ac77dd6e33536d3a8a1510a0182948f358 "/>
+      </a>
+      <ul class="dropdown-menu profile-menu">
+        <li>
+          <a href="https://dev.sumopayroll.com/profile" class="profileurl">
+            <i class="fa fa-user"></i> &nbsp; My Profile
+          </a>
+        </li>
+        <li>
+          <a href="#my_companies" id="mycompay-tab" data-toggle="modal" class="profileurl">
+            <i class="fa fa-building-o"></i> &nbsp; My Companies
+          </a>
+        </li>
+        <li>
+          <a href="https://dev.sumopayroll.com/logout" class="profileurl">
+            <i class="fa fa-sign-out"></i> &nbsp; Logout
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div id="right-sidebar" class="animated">
+  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+    <div class="sidebar-container" style="overflow: hidden; width: auto; height: 100%;">
+      <div class="tab-content">
+        <div id="tab-1" class="tab-pane active">
+          <div>
+            <ul class="notification-menu" id="notification-container">
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<input type="hidden" id="attachment_rowcount" value="0">
+<input type="hidden" id="expense_attachment_rowcount" value="0">            </nav>
+            <link media="all" type="text/css" rel="stylesheet" href="https://dev.sumopayroll.com/css/header-side-menu/toastr.min.css?ver=1.5">
+
+<link media="all" type="text/css" rel="stylesheet" href="https://dev.sumopayroll.com/css/header-side-menu/sidemenu.css?ver=1.5">
+
+<div class="navbar-default navbar-static-side">
+	<div class="sidebar-collapse">
+		<ul class="nav" id="side-menu">
+			<li class=""><a href="https://dev.sumopayroll.com"><i class="fa fa-lg fa-tachometer"></i><span class="nav-label">Dashboard</span></a></li><li class="badgeLi current active"><a><i class="fa fa-lg fa-users"></i><span class="nav-label">Employees</span>&ensp;<span class="badge areaBadge hidden">1</span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/employees/create" >New Employee</a></li><li class="nav-route active"><a href="https://dev.sumopayroll.com/employees" >View Employees</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/employees/directory" >Employee Directory</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/employees/compensation" >Employee Compensation</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/employee/savings" >Employee IT Savings</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/employees/onboarding" >Employee OnBoarding&ensp;<span class="badge subBadge">1</span></a></li></ul></li><li class=""><a href="https://dev.sumopayroll.com/myinfo"><i class="fa fa-lg fa-user"></i><span class="nav-label">My Info</span></a></li><li class=""><a href="https://dev.sumopayroll.com/payroll/mypaystubs"><i class="fa fa-lg fa-file-text"></i><span class="nav-label">My Payslips</span></a></li><li class=""><a href="https://dev.sumopayroll.com/payroll/mysavings"><i class="fa fa-lg fa-database"></i><span class="nav-label">My IT Savings</span></a></li><li class="badgeLi"><a><i class="fa fa-lg fa-inr"></i><span class="nav-label">Payroll</span>&ensp;<span class="badge areaBadge hidden">5</span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/payroll/create" >Run Payroll</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/payroll/summary" >Payroll Summary&ensp;<span class="badge subBadge">5</span></a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/payroll/configuration" >Payroll Configuration</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/payroll/forms" >Payroll Forms</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/payadvance" >Advances / Loans</a></li></ul></li><li class="badgeLi"><a><i class="fa fa-lg fa-flag"></i><span class="nav-label">HR Requests</span>&ensp;<span class="badge areaBadge hidden">1</span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/hrrequests/create" >Create HR Request</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/hrrequests/user" >My Requests</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/hrrequests/companys" >Company's Requests&ensp;<span class="badge subBadge">1</span></a></li></ul></li><li class="badgeLi"><a><i class="fa fa-lg fa-calendar"></i><span class="nav-label">Timesheets</span>&ensp;<span class="badge areaBadge hidden"></span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets/create" >New Timesheet</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets" >My Timesheets</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets/company" >Company Timesheets</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets/pending" >Approve Timesheets</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets/external-approver" >External Approvers</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets/monthly-time-report" >Monthly Time Report</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timesheets/missingtimesheets" >Missing Timesheets</a></li></ul></li><li class=""><a><i class="fa fa-lg fa-clock-o"></i><span class="nav-label">Time Offs</span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/timeoffs/create" >Request Time Off</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timeoffs" >My Time Offs</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timeoffs/department" >Department Time Offs</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timeoffs/company" >Company Time Offs</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/timeoffs/timeoffsreport" >Time Offs Report</a></li></ul></li><li class="badgeLi"><a><i class="fa fa-lg fa-folder-open"></i><span class="nav-label">Projects</span>&ensp;<span class="badge areaBadge hidden"></span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/projects/create" >Create Project</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/projects" >My Projects</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/projects/company" >Company Projects</a></li></ul></li><li class="badgeLi"><a><i class="fa fa-lg fa-gear"></i><span class="nav-label">Administration</span>&ensp;<span class="badge areaBadge hidden"></span><span class="fa arrow"></span></a><ul class="nav nav-second-level"><li class="nav-route"><a href="https://dev.sumopayroll.com/settings" >Company Information</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/administration/billing" >Account Information</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/settings/companyNotifications" >Notification Settings</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/administration/configuration" >Configuration</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/administration/company-roles" >Roles</a></li><li class="nav-route"><a href="https://dev.sumopayroll.com/administration/users" >Users</a></li></ul></li><li class=""><a href="https://dev.sumopayroll.com/reports"><i class="fa fa-lg fa-file-text"></i><span class="nav-label">Reports</span></a></li><li class=""><a href="https://dev.sumopayroll.com/support"><i class="fa fa-lg fa-support"></i><span class="nav-label">Support</span></a></li>
+		</ul>
+	</div> 
+</div>
+<script src="https://dev.sumopayroll.com/client-modules/header-side-menu/jquery.metisMenu.js"></script>
+
+<script src="https://dev.sumopayroll.com/client-modules/header-side-menu/jquery.slimscroll.min.js"></script>
+
+<script src="https://dev.sumopayroll.com/client-modules/header-side-menu/pace.min.js"></script>
+
+<script src="https://dev.sumopayroll.com/client-modules/header-side-menu/toastr.min.js"></script>
+
+<script src="https://dev.sumopayroll.com/client-modules/header-side-menu/simple-scrollbar.min.js"></script>
+
+
+<script>
+	$(document).ready(function () {
+
+		// Chrome 1+
+		var isChrome = !!window.chrome && !!window.chrome.webstore;
+		// Opera 8.0+
+		var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+		// Firefox 1.0+
+		var isFirefoxOld = typeof InstallTrigger !== 'undefined';
+		// Safari 3.0+ "[object HTMLElementConstructor]" 
+		var isFirefoxNew = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+		// Internet Explorer 6-11
+		var isIE = /*@cc_on!@*/false || !!document.documentMode;
+		// Edge 20+
+		var isEdge = !isIE && !!window.StyleMedia;
+
+		// Blink engine detection
+		var isBlink = (isChrome || isOpera) && !!window.CSS;
+		var isNotBlink = (isFirefoxOld || isFirefoxNew || isIE || isEdge);
+
+    	if (isNotBlink && ($(window).width() > 560)) {
+			$("body").removeClass("mini-navbar");
+			var el = document.querySelector('.navbar-default.navbar-static-side');
+			SimpleScrollbar.initEl(el);
+		} 
+
+	    $('.fafabars').on('click', function () {
+	        $("body").toggleClass("mini-navbar");
+	        SmoothlyMenu();
+	    });
+
+	    $(window).resize(function(){
+		    if (isNotBlink && ($(window).width() > 560)) {
+		    	if($(".ss-container").length == 0) {
+					var el = document.querySelector('.navbar-default.navbar-static-side');
+					SimpleScrollbar.initEl(el);
+		    	}
+		    }
+		});
+
+	    $('#side-menu').metisMenu();
+	    $('.right-sidebar-toggle').on('click', function () {
+	        $('#right-sidebar').toggleClass('sidebar-open');
+	    });
+	    $('.header-title.header-shift-reset').hide();
+	    $('.header-title-mobile').html($('.header-title').html());
+	});
+
+	function SmoothlyMenu() {
+	    if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
+	        $('#side-menu').hide();
+	        setTimeout(function() { $('#side-menu').fadeIn(400); }, 200);
+	    } else if ($('body').hasClass('fixed-sidebar')) {
+	        console.log('case 2');
+	        setTimeout(function() { $('#side-menu').fadeIn(400); }, 100);
+	    } else {
+	        $('#side-menu').removeAttr('style');
+	    }
+	}
+	$('.areaBadge').removeClass('hidden');
+
+</script>

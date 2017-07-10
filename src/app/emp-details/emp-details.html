@@ -1,0 +1,57 @@
+
+<div *ngIf="data" >
+<div class="col-md-12">
+  <div class="panel panel-default ">
+    <div class="panel-heading panel-icon-heading">
+      <div class="panel-icon">
+            <i class="fa fa-user"></i>
+          </div>
+           <h3 class="panel-title sub-heading">
+                <span class="form-horizontal padding-emp-directory">{{data.firstname}} {{data.lastname}} &emsp;&emsp;&emsp;    Status: {{data.status}}</span>         
+            </h3> 
+          </div>
+    <div class="panel-body panel-default">
+       <div class="col-md-2 pull-right employee-edit-btns">
+          <button class="btn btn-success action-buttons edit pull-right" name="assumed_load" (click) = "gotoDetails(data.id)" id="edit-btn-employee"  >Edit</button>
+
+         </div>
+         <div class="form-group emp-tab-bottom-margin" id="show_employee_details">
+          <div class="col-md-5 col-xs-12 col-sm-12 div-top-margin insmallscreenimg ng-scope" ng-app="Hubb.profile" ng-controller="ProfileVM as Profile" uploader="Profile.upload">
+                                                        <div class="panel-body">
+        <div class="profile text-center profile-img">
+            <img src="https://dev.sumopayroll.com/img/person.png" class="img-circle" id="settings-profile-img">
+            <div id="upload-demo" style="display: none;"></div>
+        </div>
+        <br>
+            </div> 
+            </div> 
+       
+
+         <div class="col-md-offset-2 col-md-5 col-xs-12 col-sm-12 margin-emp-show insmallscreeninfo">
+           <dl class="dl-horizontal">
+             <dt>First Name:</dt><dd class="ddate-width-details">{{data.firstname}}</dd>
+             <dt>Last Name:</dt><dd class="ddate-width-details">{{data.lastname}}</dd>
+             <dt>Status:</dt><dd class="ddate-width-details">{{data.status}}</dd>
+             <dt>Work Location:</dt><dd class="ddate-width-details">mumbai, Maharashtra, India</dd>
+             <dt>Gender:</dt><dd>{{data.gender}}</dd>
+             <span clsss="emp-india noneDisplay" id="indian_pan"><dt class="india-fields">Aadhar ID:</dt><dd class="india-fields ddate-width-details">{{data.aadharno}} </dd>
+             <dt class="india-fields">PAN No:</dt><dd class="india-fields ddate-width-details">{{data.panno}}</dd></span>
+             <dt>Date of Birth:</dt><dd class="ddate-width-details widthBreak">{{data.dateofbirth | date}}</dd>
+             <dt>Employee Type:</dt><dd class="ddate-width-details">{{data.employeetype}}</dd>
+             <dt>Organization/Dept:</dt><dd class="ddate-width-details">{{data.department}}</dd>
+             <dt>Dept. Supervisor:</dt><dd class="ddate-width-details">Sandeep Chetikam</dd>
+             <dt>Title:</dt><dd class="ddate-width-details">{{data.title }}</dd>
+             <dt>Start Date:</dt><dd class="ddate-width-details">{{data.startdate | date}}</dd>
+             <dt>Include PF:</dt><dd>Yes</dd>
+             <dt>Include ESI:</dt><dd>Yes</dd>
+           </dl>
+          </div>
+                          
+                    
+     
+    </div>
+    </div>
+</div>
+  </div>
+
+</div>

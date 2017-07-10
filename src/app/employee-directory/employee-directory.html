@@ -1,0 +1,71 @@
+
+<div class="col-md-12">
+	<div class="panel panel-default">
+  <div class="panel-heading panel-icon-heading">
+          <div class="panel-icon">
+            <i class="fa fa-users"></i>
+          </div>
+           <h3 class="panel-title sub-heading">
+                <span class="form-horizontal padding-emp-directory">Search For Employees</span>         
+            </h3> 
+          </div>
+   <!-- <div class="panel-heading"><h4><i class="fa fa-user " aria-hidden="true"></i> <span class="vertical">{{data.firstname}} details!</span></h4></div>-->
+   <div class="panel-body">
+    <table  style="width: 100%">
+    <tbody>
+    <tr>
+    <td>
+   <div class="col-md-4 col-xs-12 col-sm-12  ">
+   <form method="GET" name="form" autocomplete="off" #form="ngForm">
+   	
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Employee Name" [(ngModel)]="search" name="search" required>
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button"[disabled]="!form.form.valid" (click)="searchkey(search)" ><i class="glyphicon glyphicon-search"></i></button>
+      </span>
+   
+  </div>
+  </form>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+   <div *ngIf="data">
+    <td class="error-padding"> The following employee(s) were found.</td>
+       <table class="tabborder" *ngFor="let employee of data" cellpadding="0px;" cellspacing="0px;">
+                                             <tbody><tr>
+             
+             </tr>
+                                                        <tr>
+              <td class="error-padding emp-dir">
+                <br>
+                                <table class="tabborder" cellpadding="10px;" cellspacing="2px;">
+                  <tbody><tr>
+                    <td align="right" class="maintdpadding paddingBottom2"><span class="glyphicon glyphicon-user"></span></td><td class="mainthwidth color444"> {{employee.firstname}} {{employee.lastname}}</td>
+                  </tr>
+                </tbody></table>
+                                  <table class="borderTableWidth" cellpadding="2px;" cellspacing="2px;">
+                                    <tbody><tr>
+                    <td align="right" class="paddingRightWidth"><span class="glyphicon glyphicon-map-marker"></span></td><td class="thwidth">{{employee.worklocation}}</td>
+                  </tr>
+                                                      <tr>
+                    <td align="right" class="paddingRightWidth"><span class="glyphicon glyphicon-phone"></span></td><td class="thwidth">{{employee.phoneno}}</td>
+                  </tr>
+                                                                        <tr>
+                    <td align="right" class="paddingRightWidth"><span class="glyphicon glyphicon-envelope"></span></td><td class="thwidth"><a href="mailto:asdasd@gad.com">{{employee.emailid}}</a></td>
+                 </tr>
+                                                     <tr>
+                    <td align="right" class="paddingRightWidth"><span class="glyphicon glyphicon-home"></span></td><td class="thwidth">  <span class="bfh-states" data-country="IN" data-state="AP">Andhra Pradesh</span></td>
+                       
+                 </tr>
+                               </tbody></table>
+               </td>
+             </tr>
+      </table>
+   	
+   </div>
+   </div>
+   </div>
+   </div>

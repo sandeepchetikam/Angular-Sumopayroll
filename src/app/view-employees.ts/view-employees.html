@@ -1,0 +1,83 @@
+
+<div class="col-md-12" >
+<div class="row">
+<div class="strip-bottom-padding">
+    <div class="responsive slider slick-initialized slick-slider" id="employee-strip">
+    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1281px; transform: translate3d(0px, 0px, 0px);" role="listbox"><div id="0" class="strip-block slick-slide slick-current slick-active"  data-slick-index="0" aria-hidden="false" style="width: 427px;" tabindex="-1" role="option" aria-describedby="slick-slide00"><div class="strip-content sc0" style="color: rgb(33, 152, 255);"><div class="strip-block-number" (click)="active()" >26</div><div class="strip-block-text">Active</div></div><div id="0" class="strip-bottom sb0 strip-active"></div></div><div id="1" class="strip-block slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 427px;" tabindex="-1" role="option" aria-describedby="slick-slide01"><div class="strip-content sc1"><div class="strip-block-number">0</div><div class="strip-block-text">Exit In Process</div></div><div id="1" class="strip-bottom sb1"></div></div><div id="2" class="strip-block slick-slide slick-active" (click) ="draft()" data-slick-index="2" aria-hidden="false" style="width: 427px;" tabindex="-1" role="option" aria-describedby="slick-slide02"><div class="strip-content sc2"><div class="strip-block-number">1</div><div class="strip-block-text">Draft</div></div><div id="2" class="strip-bottom sb2"></div></div></div></div></div>
+  </div>
+</div>
+
+	<div class="row ">
+		<div class="pull-left">
+			<button class="btn btn-success" (click)="createEmp()"><i class="fa fa-plus" aria-hidden="true"></i>Add New</button>
+		</div>
+		<div class="col-md-10 padding-0 col-sm-4 col-xs-4">
+			<input type="text" class="form-control" (keyup)="searchTerm$.next($event.target.value)" placeholder="Employee Name" [(ngModel)]="searchKey" autocomplete="off">
+		</div>
+		
+		<div class="btn-group" >
+			<button class="btn btn-warning"><i class="fa fa-filter" aria-hidden="true"></i>
+			</button>
+			<button class="btn btn-default"><i class="glyphicon glyphicon-export" aria-hidden="true"></i>
+			</button>
+			<button class="btn btn-default"><i class="glyphicon glyphicon-import" aria-hidden="true"></i>
+			</button>
+		</div>
+	</div>
+	<br>
+	<hr>
+	<div class="row" *ngFor="let employee of data">
+	<div class="emp-block row">
+	<div class="emp-img">
+	<a href="./employees/850" class="pull-left"><img alt="image" class="img-circle icon" src="https://dev.sumopayroll.com/img/placeholder_male1.jpg"></a>
+	</div>
+	<div class="emp-name-title-block">
+	<div class="emp-name">
+	<a (click) = "gotoDetails(employee.id)">{{employee.firstname}} {{employee.lastname}}</a>
+	</div>
+	<div id="emp-title-850">
+	<div class="emp-name-title-separator">|</div><div class="emp-title">saed</div>
+	</div>
+	<div class="emp-status emp-active pull-left"><span class="emp-status-text">{{employee.status}}</span>
+	</div>
+	<div class="pull-right emp-actions">
+	<div class="keep-open btn-group" title="Action">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-option-vertical icon-th"></i></button>
+	<ul class="dropdown-menu dropdown-menu-right actions-dropdown" role="menu">
+	<li><a (click)="gotoDetails(employee.id)"><span class="action-item-icon"><i class="fa fa-pencil" aria-hidden="true"></i></span><span class="action-item">View / Edit</span></a>
+	</li>
+	<li><a class="void-employee" data-value="850" data-id="Active" href="javascript:void(0);"><span class="action-item-icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span><span class="action-item">Void</span></a></li>
+	<li><a href="./employees/850?emptab=headingSixteen#headingSixteen"><span class="action-item-icon"><i class="fa fa-ban" aria-hidden="true"></i></span><span class="action-item">Terminate</span></a></li>
+	<li><a class="userInfo" href="./administration/users/220"><span class="action-item-icon"><i class="fa fa-user" aria-hidden="true"></i></span><span class="action-item">User Information</span></a></li>
+	</ul>
+	</div>
+	</div>
+	</div>
+	<div class="emp-details">
+	<dl class="dl-horizontal primary-info">
+	<dt>Employee Type:</dt>
+	<dd>{{employee.employeetype}}</dd>
+	<dt>Email:</dt>
+	<dd><a href="mailto:" target="_top">{{employee.emailid}}</a></dd>
+	<dt>Phone:</dt>
+	<dd><a href="tel:">{{employee.phoneno}}</a></dd>
+	<dt>Employee ID:</dt>
+	<dd>{{employee.id}}</dd>
+	<dt>Payroll Group:</dt>
+	<dd>{{employee.group}}</dd>
+	</dl>
+	<dl class="dl-horizontal secondary-info">
+	<dt>Start Date:</dt>
+	<dd>{{employee.dateofbirth | date}}</dd>
+	<dt>Organization/Dept:</dt>
+	<dd>{{employee.department}}</dd>
+	<dt>Dept. Supervisor:</dt>
+	<dd></dd>
+	<dt>Work Location:</dt>
+	<dd>{{employee.worklocation}}</dd>
+	<dt>Payroll Batch:</dt>
+	<dd></dd>
+	</dl>
+	</div>
+	</div>
+</div>

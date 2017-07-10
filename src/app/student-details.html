@@ -1,0 +1,24 @@
+
+
+
+<div class="container-fluid">
+<h1>Employee Details</h1>
+	<button class="btn btn-success" (click)="createEmp()" >Add Employee</button>
+<table class="table  table-hover" >
+	<tr><th>Id</th><th>FirstName</th><th>Lastname</th><th>DateOfBirth</th><th>Gender</th><th>aadharno</th><th>Pan No</th><th>Employee type</th><th>worklocation</th><th>Actions</th></tr>
+	<tr *ngFor="let employee of data; let i = index;">
+	<td>{{employee.id}}</td>
+	<td>{{employee.firstname}}</td>
+	<td>{{employee.lastname}}</td>
+	<td>{{employee.dateofbirth}}</td>
+	<td>{{employee.gender}}</td>
+	<td>{{employee.aadharno}}</td>
+	<td>{{employee.panno}}</td>
+	<td>{{employee.employeetype}}</td>
+	<td>{{employee.worklocation}}</td>
+
+
+	<td> <button class="btn btn-success"(click)="gotoDetails(employee.id)">Edit</button> <button class="btn btn-danger" (click)="deleteDetails(employee.id)">Delete</button></td>
+	</tr>
+</table>
+</div>

@@ -1,0 +1,163 @@
+
+<div *ngIf="edited" class="alert alert-success box-msg" role="alert">
+        <strong>List Saved!</strong> Your changes has been saved.
+</div>
+
+
+<div class="col-md-12 clearfix" >
+<div class="panel panel-default">
+  <div class="panel-heading panel-icon-heading">
+          <div class="panel-icon">
+            <i class="fa fa-user"></i>
+          </div>
+           <h3 class="panel-title sub-heading">
+                <span class="form-horizontal padding-emp-directory"></span>         
+            </h3> 
+          </div>
+   <!-- <div class="panel-heading"><h4><i class="fa fa-user " aria-hidden="true"></i> <span class="vertical">{{data.firstname}} details!</span></h4></div>--><br>
+   <div class="panel-body">
+
+    
+    <form class="form-horizontal" id="empform" method="post"  #employeeform="ngForm">
+    
+    <div class="form-group ">
+       
+        <label for="worklocation" class="control-label col-md-3 requiredLabel">Work Location</label>
+        <div class="col-md-6">
+        <select class="form-control " placeholder="Please Select a Location" id ="target"  name="city" (change)="changeHandler()">
+       
+        <option *ngFor="let employee of work" [ngValue]="employee"
+      [disabled]="employee.value==0">{{employee.state}},{{employee.city}}</option>
+        
+        </select>
+      </div>
+        
+        
+              </div>
+      <div [hidden]="!clicked" >
+      <div class="form-group ">
+       
+        <label for="firstname" class="control-label col-md-3 requiredLabel">FirstName</label>
+        <div class="col-md-6">
+        <input type="text" class="form-control col-md-6" id="firstname" required minlength="4" [(ngModel)]="data.firstname"  #firstname="ngModel" placeholder="FirstName" name="firstname"  >
+           <p style="color: red; font-size: .8em; margin-top: .5em;" [hidden]="firstname.valid || (firstname.pristine && !employeeform.submitted)">Firstname is required and should be minimum 4 characters.</p>
+       
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname" class="control-label col-md-3 requiredLabel">LastName</label>
+        <div class="col-md-6">
+        <input type="text" class="form-control" id="lastname" required [(ngModel)]="data.lastname" #lastname="ngModel" name="lastname" minlength="4"  placeholder="LastName">
+        <p style="color: red; font-size: .8em; margin-top: .5em;" [hidden]="lastname.valid || (lastname.pristine && !employeeform.submitted)">Lastname is required and should be minimum 4 characters.</p>
+        </div>
+      </div>
+       <div class="form-group">
+        <label for="dob" class="control-label col-md-3">Gender</label>
+        <div class="col-md-6" (change)="changeHandler()">
+        <input type="radio" id="radio1" name="radios" value="Male"  [(ngModel)]="data.gender">
+       <label for="radio1">Male</label>
+    <input type="radio" id="radio2" name="radios" value="Female"  [(ngModel)]="data.gender">
+       <label for="radio2">Female</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="control-label col-md-3 requiredLabel">Phone No</label>
+        <div class="col-md-6">
+        <input type="text" class="form-control" id="phone" required #phoneno="ngModel" [(ngModel)]="data.phoneno" name="phone" minlength="10" maxlength="10" placeholder="phone No">
+        <p style="color: red; font-size: .8em; margin-top: .5em;" [hidden]="phoneno.valid || (phoneno.pristine && !employeeform.submitted)">phoneno is required and should be minimum 10 numbers.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="emailid" class="control-label col-md-3 requiredLabel">Email Id</label>
+        <div class="col-md-6">
+        <input type="email" class="form-control" id="emailid" required [(ngModel)]="data.emailid" #email="ngModel" [email]="true" name="emailid"  placeholder="emailid">
+         <p style="color: red; font-size: .8em; margin-top: .5em;" [hidden]="email.valid || (email.pristine && !employeeform.submitted)">Please Enter Valid Email Id.</p>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <label for="aadhar" class="control-label col-md-3 requiredLabel">Aadhar Id</label>
+        <div class="col-md-6">
+        <input type="number" class="form-control" id="aadhar" #aadhar="ngModel" required [(ngModel)]="data.aadharno" name="aadhar"  placeholder="Aadhar No">
+        <p style="color: red; font-size: .8em; margin-top: .5em;" [hidden]="aadhar.valid || (aadhar.pristine && !employeeform.submitted)">AadharNo is required.</p>
+        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="panno" class="control-label col-md-3 requiredLabel">PAN No</label>
+        <div class="col-md-6">
+        <input type="number" class="form-control" placeholder="PAN No" #panno="ngModel" id="panno" required [(ngModel)]="data.panno" name="panno">
+        <p style="color: red; font-size: .8em; margin-top: .5em;" [hidden]="panno.valid || (panno.pristine && !employeeform.submitted)">Pan No is required.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="employeetype" class="control-label col-md-3">Employee Type</label>
+        <div class="col-md-6">
+        <input type="text" class="form-control" id="employeetype"  [(ngModel)]="data.employeetype" name="employeetype">
+        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dob" class="control-label col-md-3">Date of Birth:</label>
+        <div class="col-md-6">
+        <input type="date" class="form-control" id="dob" required [(ngModel)]="data.dateofbirth" name="dob">        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title" class="control-label col-md-3 requiredLabel">title</label>
+        <div class="col-md-6">
+        <input type="text" class="form-control" id="title" required name="title"  placeholder="Title" [(ngModel)]="data.title" >
+        
+        </div>
+      </div>
+     <div class="form-group">
+        <label for="department" class="control-label col-md-3 requiredLabel">Department</label>
+        <div class="col-md-6">
+        <select class="form-control" id="department" required [(ngModel)]="data.department" name="department"  placeholder="Department">
+        <option value="" selected >Select department</option><option value="4455">Accounting</option><option value="4456">Administration</option><option value="4457">Billable Consultants</option><option value="4458">Customer Service</option><option value="4459">Finance</option><option value="4460">Human Resources</option><option value="4461">IT Staff</option><option value="4463">Management</option><option value="4464">Marketing and Advertising</option><option value="5560">New Department</option><option value="4462">Officers</option><option value="4465">Production</option><option value="4466">Purchasing</option><option value="4467">Sales</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="jobdescription" class="control-label col-md-3">Job Description</label>
+        <div class="col-md-6">
+        <textarea  class="form-control" id="jobdescription" [(ngModel)]="data.jobdescription" name="jobdescription"  placeholder="Job Description">
+        </textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="startdate" class="control-label col-md-3 requiredLabel">Start Date</label>
+        <div class="col-md-6">
+        <input type="date" class="form-control" id="startdate" required [(ngModel)]="data.startdate" name="startdate">        
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="empid" class="control-label col-md-3 requiredLabel">Employee Id</label>
+        <div class="col-md-6">
+        <input type="text" class="form-control" id="empid" required [(ngModel)]="data.empid" name="empid"  placeholder="Employee Id">
+        
+        </div>
+      </div>
+       <div class="col-md-9">
+    <div class="pull-right">
+      
+      <button form="empform" class="btn btn-default equalbtn" (click)="goBack()" >Cancel</button>
+      <button type="submit" class="btn btn-default" (click)="draftEmployee(); gotoDraft()">Save Draft</button>
+      <button type="submit" form="empform" class="btn btn-primary equalbtn"  id="myWish"  [disabled]="!employeeform.form.valid" (click)="addEmployee(); gotoDetails()" value="submit" >Next</button>
+  
+      </div>
+       
+      </div>
+
+      </div>
+
+    </form>
+
+    </div>
+    </div>
+    </div>
+   
+    
+   
